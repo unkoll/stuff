@@ -1,8 +1,3 @@
 def application(env, start_response):
-    status = "200 OK"
-    headers = [('Content-Type', 'text/plain')]
-    body = env['QUERY-STRING'].split('&')
-    body = '/r/n'.join(body)
-
-    start_response(status, headers)
-    return [body]
+    start_response('200 OK', [('Content-Type', 'text/plain')])
+    return [bytes('\r\n'.join(env['QUERY_STRING'].split('&')), encoding="utf8")]
