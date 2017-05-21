@@ -1,8 +1,8 @@
-from django.conf.url import include, url
+from django.conf.urls import url
 
 from . import views
 
-urlpattern = [
+urlpatterns = [
     url(r'^$', views.test),
     url(r'^login/', views.test),
     url(r'^singup/', views.test),
