@@ -1,4 +1,4 @@
-from django.conf.url import url
+from django.conf.url import include, url
 
 from . import views
 
